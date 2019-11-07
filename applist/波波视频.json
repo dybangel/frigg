@@ -1,0 +1,117 @@
+ {
+        "enable":"false",
+        "appname":"波波视频", 
+        "apptype":"layers",
+        "interval":"120",
+         "packagename":"tv.yixia.bobo",
+        "activityname":"com.kg.v1.welcome.WelcomeActivity",
+        "open":{
+          "featuremode":"classname_text",
+          "classname":"android.widget.TextView",
+          "text":"我的",
+          "depth":"",
+          "indexinparent":"",
+          },
+      "abnormal":{
+           "ab1":{
+               "featuremode":"id",
+               "id":"iv_close",
+           },
+           "ab2":{
+            "featuremode":"classname_text",
+            "classname":"android.widget.TextView",
+            "text":"知道了",
+          },
+         }, 
+		  "activitys":{
+					"at1":"com.kg.v1.MainActivity",
+				
+		   
+          } , 		 
+        "bindwechat":{
+          "bw1":{
+            "action":"click_text",
+            "click_text":"",
+            "featuremode":"classname_text",
+            "classname":"android.widget.TextView",
+            "text":"看视频赚零花",
+        },
+        "bw2":{
+         "action":"click_text",
+         "click_text":"",
+         "featuremode":"classname_text",
+         "classname":"android.widget.Button",
+         "text":"同意"
+        },
+        "bw3":{
+          "action":"click_text",
+          "click_text":"同意",
+          "featuremode":"classname_text",
+          "classname":"android.widget.TextView",
+          "text":"我的钱包"
+         },
+    
+        },
+        "autoread":{
+		 "ar1":{
+                "action":"click_text",
+                "click_text":"首页",
+                "featuremode":"id",
+                "id":"ako",
+            },
+            "ar2":{
+                "deploymode":"classname_desc",
+                "deployclassname":"android.view.View",
+                "deploydesc":"展开全文",
+
+        }, 
+        
+       },
+       "pagecheck": {
+        "pc1": {
+          "info": "一级页面",
+          "featuremode": "id('tv.yixia.bobo:id/sm').exists()==false && className('android.widget.TextView').boundsInside(0,device.height*0.8,device.width,device.height).text('赚钱').exists()==true",
+          "actiontype": "func_ext", //code
+          "action": "p1()", //customfun,click_id,  
+        },
+    
+        "pc2": {
+          "info": "二级页面",
+          "featuremode": "id('tv.yixia.bobo:id/sm').exists()",
+          "actiontype": "func_ext",
+          "action": "p2()",
+        },
+        "pc3": {
+          "info": "广告视频1",
+          "featuremode": "'com.qq.e.ads.PortraitADActivity'==currentActivity()||'com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity'==currentActivity()",
+          "actiontype": "func_ext",
+          "action": "p3()",
+        },
+        "pc4": {
+          "info": "任务中心",
+          "featuremode": "'com.qq.e.ads.PortraitADActivity'==currentActivity()||'com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity'==currentActivity()",
+          "actiontype": "func_ext",
+          "action": "p4()",
+        },
+        "pc5": {
+          "info": "金币翻倍弹窗",
+          "featuremode": "className('android.widget.TextView').textContains('金币翻倍').exists()",
+          "actiontype": "func_ext",
+          "action": "p5()",
+        },
+        "pc6": {
+          "info": "看视频继续领",
+          "featuremode": "className('android.widget.TextView').textContains('看视频继续领').exists()",
+          "actiontype": "func_ext",
+          "action": "p6()",
+        },
+        "pc7": {
+          "info": "广告视频2",
+          "featuremode": "'com.sigmob.sdk.base.common.AdActivity'==currentActivity()",
+          "actiontype": "func_ext",
+          "action": "p7()",
+        },
+      
+        },
+        "durl":"http://cr1.197946.com/boboshipin.apk"
+      }

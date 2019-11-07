@@ -1,0 +1,127 @@
+{
+	"enable": "false",
+	"appname": "百思视频",
+	"apptype": "layers", //layer1 layer2 layers
+	"appver": "2.2.3",
+	"interval": "30",
+	"speed": "normal",
+	"packagename": "com.budejie.v",
+	"activityname": "com.budejie.v.main.activity.MainActivity",
+	"open": {
+		"featuremode": "classname_text",
+		"classname": "android.widget.TextView",
+		"text": "推荐",
+		"depth": "11",
+		"indexinparent": "0",
+	},
+	"signin": {
+	    "sg1": {
+			"action": "click_xypercent",
+			"click_xypercent":"0.886||0.058",
+			"featuremode": "classname_text",
+			"classname": "android.widget.TextView",
+			"text": "余额",
+		},
+		"sg2": {
+			"action": "click_xypercent",
+			"click_xypercent":"0.858||0.969",
+			"featuremode": "classname_text",
+			"classname": "android.widget.TextView",
+			"text": "余额",
+		},
+		"sg3": {
+			"action": "click_id",
+			"click_id": "com.budejie.v:id/task_layout",
+			"featuremode": "classname_text",
+			"classname": "android.widget.TextView",
+			"text": "签到领金币",
+		},
+		"sg4": {
+			"action": "click_id",
+			"click_id": "com.budejie.v:id/checkin",
+			"featuremode": "classname_text",
+			"classname": "android.widget.TextView",
+			"text": "已签到",
+		},
+	},
+	"abnormal": {
+		"ab1": {
+			"featuremode": "id",
+			"id": "com.budejie.v:id/closeIV",
+		},
+		"ab2": {
+			"featuremode": "id",
+			"id": "com.budejie.v:id/close",
+		},
+		"ab3": {
+			"featuremode": "id",
+			"id": "com.budejie.v:id/start_layout",
+		},
+	},
+	"activitys": {
+		"at1": "com.budejie.v.main.activity.MainActivity",
+		"at2": "com.budejie.v.video.activity.VideoDetailActivity",
+	},
+	"bindwechat": {
+	},
+	"autoread": {
+		"ar1": {
+			"action": "",
+			"click_id": "",
+			"featuremode": "id",
+			"id": "com.budejie.v:id/share_btn",
+		},
+		"ar2": {
+		    "upcount":"25",
+			"deploymode": "",
+			"deployclassname": "",
+			"deploydesc": "",
+		},
+	},
+	"pagecheck": {
+		"pc1": {
+			"info": "发现首页",
+			"featuremode": "className('android.widget.TextView').depth(11).indexInParent(1).text('视频').exists()",
+			"actiontype": "code", //code
+			"action": "Swipe(200,800,200,200,500);sleep(2000);thiscommon.touchreal(500, 800);", //customfun,click_id,  
+		},
+
+		"pc2": {
+			"info": "发现视频页面",
+			"featuremode": "id('shadow_btn_login').depth(6).indexInParent(3).exists()",
+			"actiontype": "code",
+			"action": "toast('观看30秒');sleep(30000);back();",
+		},
+		"pc3": {
+			"info": "视频等待页面",
+			"featuremode": "id('com.b12lab.myluck:id/tt_reward_ad_countdown').depth(3).indexInParent(1).exists()",
+			"actiontype": "code",
+			"action": "toast('等待视频播放完成')",
+		},
+		"pc4": {
+			"info": "关闭视频页面",
+			"featuremode": "id('com.b12lab.myluck:id/tt_video_ad_close').depth(3).indexInParent(3).exists()",
+			"actiontype": "code",
+			"action": "id('com.b12lab.myluck:id/tt_video_ad_close').click()",
+		},
+		"pc5": {
+			"info": "点击领取页面",
+			"featuremode": "className('android.widget.TextView').text('点击领取').depth(9).indexInParent(1).exists()",
+			"actiontype": "code", //code
+			"action": "className('android.widget.TextView').text('点击领取').click()", //customfun,click_id,
+		},
+		"pc6": {
+			"info": "刮奖页面",
+			"featuremode": "id('com.b12lab.myluck:id/swipeRefreshLayout').depth(13).indexInParent(0).exists()",
+			"actiontype": "func", //code
+			"action": "swipeguagua()", //customfun,click_id,
+		},
+		"pc7": {
+			"info": "非呱呱卡页面",
+			"featuremode": "className('android.widget.TextView').text('幸运转盘').depth(9).indexInParent(1).exists()",
+			"actiontype": "code", //code
+			"action": "id('com.b12lab.myluck:id/nav_bar_iv_nav_back').click()", //customfun,click_id,
+		},
+	"durl": "http://xzf.197946.com/com.sanmiao.sound_2.3.4_34.apk"
+}
+}

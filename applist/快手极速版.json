@@ -1,0 +1,58 @@
+{
+	"enable": "false",
+	"appname": "快手极速版",
+	"apptype":"layers",
+	"appver": "1.4.0.30",
+	"interval": "120",
+	"speed": "normal",
+	"packagename": "com.kuaishou.nebula",
+	"activityname": "com.yxcorp.gifshow.HomeActivity",
+	"open": {
+		"featuremode": "classname_text",
+		"classname": "android.widget.TextView",
+		"text": "关注",
+		"depth": "9",
+		"indexinparent": "0",
+	},
+	"signin": {},
+	"abnormal": {
+		"ab1": {
+			"featuremode": "id",
+			"id": "com.kuaishou.nebula:id/container",
+		},
+	},
+	"activitys": {
+		"at1": "com.yxcorp.gifshow.detail.PhotoDetailActivity",
+	},
+	"bindwechat": {},
+	"autoread": {
+		"ar1": {
+			"action": "",
+			"click_text": "",
+			"featuremode": "id",
+			"id": "com.kuaishou.nebula:id/",
+		},
+		"ar2": {
+			"deploymode": "",
+			"deployclassname": "",
+			"deploydesc": "",
+		},
+		"durl": ""
+	},
+	"pagecheck": {
+		"pc1": {
+			"info": "视频页",
+			"featuremode": "id('com.kuaishou.nebula:id/forward_icon').exists()",
+			"actiontype": "func_ext", //code
+			"action": "p1()", //customfun,click_id,  
+		},
+
+		"pc2": {
+			"info": "滑块页面",
+			"featuremode": "className('android.widget.TextView').text('拖动滑块').exists()",
+			"actiontype": "code",
+			"action": "device.vibrate(5000);device.setMusicVolume(7);thiscommon.playglobal('warning');",
+		},
+	
+},
+}

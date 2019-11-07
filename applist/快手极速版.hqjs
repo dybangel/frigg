@@ -1,0 +1,14 @@
+function finditem(){ 
+    m=20000;
+    n=15000;
+    x=Math.round(Math.random()*(m-n))+n;
+    sleep(x);
+    Gbrick_count=999;
+    return false;}
+function swipe_huakuai(){
+  result=className("android.view.View").indexInParent(0).depth(14).exists();
+    if(result){
+        ele=className("android.view.View").indexInParent(0).depth(14).findOnce();
+        swipe(ele.bounds().centerX(),
+        ele.bounds().centerY(),device.width * 0.65,ele.bounds().centerY(),700)
+    }}
