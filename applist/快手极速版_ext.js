@@ -36,16 +36,37 @@ module.exports = {
 							var comment_count=comment_json.length;
 							if(comment_count>0){
 								var zz=Math.round(Math.random()*(comment_count-1))+1;
-								elestr=id('com.kuaishou.nebula:id/editor_holder').boundsInside(0,device.height*0.7,device.width,device.height);
+								//直接点击文本区域
+								elestr1=id('com.kuaishou.nebula:id/editor_holder').boundsInside(0,device.height*0.7,device.width,device.height);
 							
-								result=elestr.exists();
-								if(result){
-									thiscommon.clickxy_for_ele(elestr.findOnce());
+								result1=elestr1.exists();
+								if(result1){
+									thiscommon.clickxy_for_ele(elestr1.findOnce());
 									sleep(500);
 									setText(comment_json[zz]);
 									sleep(500)
 									click('发送');
+								}else {
+									//另一种布局的情况
+									elestr2=id('com.kuaishou.nebula:id/comment_icon').
+									boundsInside(0,device.height*0.5,device.width,device.height);
+									result2=elestr2.exists();
+									if(result2){
+											thiscommon.clickxy_for_ele(elestr2.findOnce());
+											sleep(500);
+											setText(comment_json[zz]);
+											sleep(500)
+											var x=id('com.kuaishou.nebula:id/comment_editor_avatar').findOnce().bounds().left;
+											var y=id('com.kuaishou.nebula:id/comment_editor_avatar').findOnce().bounds().centerY();
+											//调出发送按钮
+											click(x+device.width/2,y);
+											sleep(800);
+                                            click('发送');
+                                            sleep(800);back();
+									}
+
 								}
+
 							}
 	
 						}else{log('不评论')}
@@ -53,30 +74,41 @@ module.exports = {
 						var kanpinglun=Math.round(Math.random()*(5-1))+1;
 									if(kanpinglun==1||kanpinglun==3){
 										var result=id('com.kuaishou.nebula:id/comment_icon').exists();
-										if(result){
-											var ele=id('com.kuaishou.nebula:id/comment_icon').boundsInside(device.width *0.5, device.height *0.8, device.width, device.height).findOne();
-											thiscommon.clickxy_for_ele(ele);
-											sleep(2000);
-											var result=id('com.kuaishou.nebula:id/comment_header_close').exists();
-											if(result){
-												thiscommon.swipeup();sleep(1000);thiscommon.swipeup();
-											back();
-											}
-										}
+									if(result){
+														var ele=id('com.kuaishou.nebula:id/comment_icon').depth(14).findOnce(1);
+														thiscommon.clickxy_for_ele(ele);
+														sleep(2000);
+														var result1=id('com.kuaishou.nebula:id/comment_header_close').exists();
+														var result2=id('com.kuaishou.nebula:id/slide_play_comment_expand_icon_view').exists();
+														if(result1 || result2){
+															thiscommon.swipeup();sleep(1000);thiscommon.swipeup();
+														back();
+														}
+													}
 									}
 						//随机点赞
 						var dianzan=Math.round(Math.random()*(5-1))+1;
 						if(dianzan==1||dianzan==3){
-						var result=id('com.kuaishou.nebula:id/like_icon').exists();
-									if(result){ele=id('com.kuaishou.nebula:id/like_icon').boundsInside(device.width *0.5, device.height *0.8, device.width, device.height).findOne();
-									thiscommon.clickxy_for_ele(ele);
-									log('点赞');};
+							var result=id('com.kuaishou.nebula:id/like_icon').exists();
+							if(result){
+								ele=id('com.kuaishou.nebula:id/like_icon').boundsInside(device.width *0.5, device.height *0.5, device.width, device.height).findOne();
+								thiscommon.clickxy_for_ele(ele);
+								log('点赞');};
+									
 						}else{
 							log('不点赞');
 						}
 		});
-		thiscommon.mysleep(10,18);
+		thiscommon.mysleep(8,12);
 	
+	},
+	p3:function(){
+  	  	var elestr=className('android.widget.TextView').text('我知道了')
+   		 thiscommon.clickxy_for_ele(elestr.findOnce());
+	},
+	p4:function(){
+		var elestr=className('android.widget.TextView').textContains('重播')
+		thiscommon.clickxy_for_ele(elestr.findOnce());
 	},
 	
 }

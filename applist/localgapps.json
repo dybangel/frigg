@@ -1,8 +1,8 @@
 [     
-	//{"appnum":"002","appname":"快手极速版","enable":"true"},
-	{"appnum":"004","appname":"波波视频","enable":"true"},	
+	{"appnum":"002","appname":"快手极速版","enable":"true"},
+	//{"appnum":"004","appname":"波波视频","enable":"true"},	
 	{"appnum":"003","appname":"快看点","enable":"true"},	
-	{"appnum":"001","appname":"百思视频","enable":"true"},
+	//{"appnum":"001","appname":"百思视频","enable":"true"},
 		
 		 //{"appnum":"043","appname":"红包视频","enable":"true"},
          //{"appnum":"054","appname":"氪资讯","enable":"true"},

@@ -8,9 +8,8 @@
 	"packagename": "com.kuaishou.nebula",
 	"activityname": "com.yxcorp.gifshow.HomeActivity",
 	"open": {
-		"featuremode": "classname_text",
-		"classname": "android.widget.TextView",
-		"text": "关注",
+		"featuremode": "classname",
+		"classname": "android.view.View",
 		"depth": "9",
 		"indexinparent": "0",
 	},
@@ -51,7 +50,20 @@
 			"info": "滑块页面",
 			"featuremode": "className('android.widget.TextView').text('拖动滑块').exists()",
 			"actiontype": "code",
-			"action": "device.vibrate(5000);device.setMusicVolume(7);thiscommon.playglobal('warning');",
+			"action": "device.vibrate(5000);device.setMusicVolume(7);thiscommon.playglobal('warning');device.setMusicVolume(0);",
+		},
+		"pc3":{
+			"info": "防沉迷弹窗",
+			"featuremode": "className('android.widget.TextView').text('我知道了').exists()",
+			"actiontype": "func_ext",
+			"action": "p3()",
+		},
+		"pc4":{
+			"info": "重播页面",
+			"featuremode": "className('android.widget.TextView').textContains('重播').exists()",
+			"actiontype": "func_ext",
+			"action": "p4()",
+
 		},
 	
 },

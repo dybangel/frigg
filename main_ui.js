@@ -2913,7 +2913,12 @@ function while_pagecheck() {
                     //线程计数器超过数量
                     try {
                         if (samepcx_count > 50) {
-                            if(appname=='快看点'||appname=='波波视频'){
+                            try{
+                            log("没有识别页面："+currentActivity());
+                            log("没有识别页面所属包名:"+appname+currentPackage());
+                            back();}catch(e){}
+
+                            if(appname=="快手极速版"||appname=='快看点'||appname=='波波视频'){
                                 samepcx_count = 0;
                             }else{
                                 toast("本页面停留太长，重新拉起")
